@@ -1,10 +1,10 @@
 import './styles/global.scss';
-import LocationTest from './components/LocationTest/LocationTest';
+import WeatherDisplay from './components/WeatherDisplay/WeatherDisplay';
 
 function App() {
   return (
     <div className="wrapper">
-      <LocationTest />
+      <WeatherDisplay />
     </div>
   );
 }

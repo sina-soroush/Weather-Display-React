@@ -170,3 +170,49 @@ export const getLocationByCity = async (cityName) => {
     throw new Error(`Failed to find city: ${error.message}`);
   }
 };
+
+/**
+ * Search for cities with autocomplete suggestions (like Google Maps)
+ * Uses OpenStreetMap Nominatim API
+ * @param {string} query - The search query
+ * @param {number} limit - Maximum number of results (default: 5)
+ * @returns {Promise<Array<{id: string, name: string, displayName: string, latitude: number, longitude: number, type: string}>>}
+ */
+export const searchCities = async (query, limit = 5) => {
+  if (!query || query.trim().length < 2) {
+    return [];
+  }
+
+  try {
+    // Add addressdetails for better formatting and restrict to cities/towns
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/search?` +
+      `format=json&` +
+      `q=${encodeURIComponent(query)}&` +
+      `limit=${limit}&` +
+      `addressdetails=1&` +
+      `featuretype=city`
+    );
+    
+    if (!response.ok) {
+      throw new Error('City search failed');
+    }
+    
+    const data = await response.json();
+    
+    return data.map(result => ({
+      id: result.place_id.toString(),
+      name: result.name || result.address?.city || result.address?.town || result.address?.village,
+      displayName: result.display_name,
+      latitude: parseFloat(result.lat),
+      longitude: parseFloat(result.lon),
+      type: result.type,
+      city: result.address?.city || result.address?.town || result.address?.village || result.name,
+      state: result.address?.state || result.address?.region || '',
+      country: result.address?.country || '',
+    }));
+  } catch (error) {
+    console.warn('City search error:', error);
+    return [];
+  }
+};
