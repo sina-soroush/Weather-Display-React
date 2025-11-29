@@ -6,6 +6,13 @@ A modern, responsive weather application built with React and Vite. Features rea
 ![Vite](https://img.shields.io/badge/Vite-6.0.3-purple)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## 🔗 Preview
+
+You can view the live version of this project here:  
+👉 [weather-display-react.netlify.app](https://weather-display-react.netlify.app/)
+
+<img width="1920" height="1330" alt="Weather-Display" src="https://github.com/user-attachments/assets/6b57139d-c598-4ddf-9471-f7847fdd556e" />
+
 ## ✨ Features
 
 - 🌍 **Automatic Location Detection** - Uses GPS or IP-based location fallback
