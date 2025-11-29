@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+.progress {
+  @include size(100%, 12px);
+  position: relative;
+  margin-top: 16px;
+  border-radius: 12px;
+  box-shadow: $dropShadow;
+  background-color: $bgColor;
+
+  &__fill {
+    height: 100%;
+    position: absolute;
+    border-radius: inherit;
+    background: linear-gradient(to right, $accentBlue, $brightBlue);
+    transition: width 300ms ease-in-out;
+    
+    .progress__label {
+      @include applyFontStyle;
+      padding: 11px 15px;
+      margin-top: -16px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -100%);
+      border-radius: 8px;
+      box-shadow: $dropShadow;
+      background-color: $bgColor;
+      white-space: nowrap;
+      
+      &:after {
+        content: "";
+        @include size(0);
+        position: absolute;
+        right: 50%;
+        bottom: -9px;
+        transform: translateX(50%);
+        border-top: 9px solid $bgColor;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.search {
+  position: relative;
+  width: 100%;
+  
+  &__icon {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 28px;
+    transform: translateY(-50%);
+    stroke-width: 0.5px;
+  }
+  
+  &__input {
+    @include applyFontStyle;
+    height: $height;
+    width: 100%;
+    padding: 0 60px;
+    text-align: left;
+    border: 3px solid rgba($lightShadow, 0);
+    outline: none;
+    background-color: $bgColor;
+    border-radius: 40px;
+    box-shadow: $innerShadow;
+    transition: all 250ms ease-in-out;
+    
+    &:focus {
+      box-shadow: none;
+      border-color: rgba($lightShadow, 0.5);
+    }
+
+    &::placeholder {
+      @include applyFontStyle;
+      opacity: 1;
+    }
+  }
+}

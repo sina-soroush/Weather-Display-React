@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+.radio {
+  &__input {
+    display: none;
+
+    &:checked + .radio__btn {
+      box-shadow: $innerShadow;
+      border-color: rgba($lightShadow, 0);
+      
+      &:before { 
+        background-color: $iconColor; 
+      }
+    }
+  }
+  
+  &__btn {
+    @include size($height);
+    display: block;
+    position: relative;
+    border: 3px solid rgba($lightShadow, 0);
+    border-radius: 100%;
+    box-shadow: $dropShadow;
+    background-color: $bgColor;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+  
+    &:hover {
+      box-shadow: none;
+      border-color: rgba($lightShadow, 0.5);
+    }
+    
+    &:before {
+      content: "";
+      @include size(20px);
+      @include center;
+      border-radius: 100%;
+      border: 3px solid $iconColor;
+      transition: all 200ms ease-in-out;
+    }
+  }
+}

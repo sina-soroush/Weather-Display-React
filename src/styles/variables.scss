@@ -1,0 +1,42 @@
+// Typography
+$fontFamily: 'Montserrat', sans-serif;
+$fontSize: 18px;
+
+// Colors
+$textColor: #6C7587;
+$iconColor: #8992A5;
+$bgColor: #EBECF0;
+$accentBlue: #1657F0;
+$brightBlue: #36D7E0;
+$darkShadow: #484f60;
+$lightShadow: #FFFFFF;
+
+// Sizing
+$height: 54px;
+
+// Shadows
+$dropShadow: 8px 8px 12px -2px rgba($darkShadow, 0.4),
+             -6px -6px 12px -1px rgba($lightShadow, 1);
+
+$innerShadow: inset -4px -4px 6px -1px rgba($lightShadow, 1),
+              inset 2px 2px 8px -1px rgba($darkShadow, 0.5);
+
+// Mixins
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin applyFontStyle() {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $fontSize;
+  color: $textColor;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

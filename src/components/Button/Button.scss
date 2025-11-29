@@ -1,0 +1,91 @@
+@import '../../styles/variables.scss';
+
+%shared-button-styles {
+  @include applyFontStyle;
+  padding: 0 8px;
+  position: relative;
+  border: 3px solid rgba($lightShadow, 0);
+  outline: none;
+  text-align: center;
+  background-color: $bgColor;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  box-shadow: $dropShadow;
+  
+  &:hover {
+    box-shadow: none;
+    border-color: rgba($lightShadow, 0.5);
+  }
+
+  &:active {
+    box-shadow: $innerShadow;
+    border-color: rgba($lightShadow, 0);
+  }
+  
+  & > * { 
+    vertical-align: middle; 
+  }
+  
+  & > span:last-child { 
+    padding-left: 8px; 
+  }
+}
+
+.button {
+  @extend %shared-button-styles;
+}
+
+// Square buttons
+.square-lg {
+  @extend %shared-button-styles;
+  @include size(100%);
+  position: relative;
+  border-radius: 24px;
+  font-size: 64px;
+  
+  &__gradient-text {
+    @include size(100%, 64px);
+    @include center;
+  }
+}
+
+.icon-btn {
+  @extend %shared-button-styles;
+  @include size($height);
+  border-radius: 14px;
+  padding: 0;
+  
+  &__icon {
+    @include size(24px);
+    fill: $iconColor;
+  }
+}
+
+// Oval Buttons
+%oval-btn {
+  height: $height;
+  padding: 0 28px;
+  border-radius: 40px;
+}
+
+.oval-xlg {
+  @extend %shared-button-styles;
+  @extend %oval-btn;
+  width: 100%;
+}
+
+.oval-lg {
+  @extend %shared-button-styles;
+  @extend %oval-btn;
+  width: 210px;
+  
+  &--with-icon {
+    text-align: left;
+  }
+}
+
+.oval-sm {
+  @extend %shared-button-styles;
+  @extend %oval-btn;
+  width: 140px;
+}

@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.input {
+  @include applyFontStyle;
+  padding: 0 8px;
+  position: relative;
+  border: 3px solid rgba($lightShadow, 0);
+  outline: none;
+  text-align: center;
+  background-color: $bgColor;
+  transition: all 250ms ease-in-out;
+  box-shadow: $innerShadow;
+  
+  &:focus {
+    box-shadow: none;
+    border-color: rgba($lightShadow, 0.5);
+  }
+
+  &::placeholder {
+    @include applyFontStyle;
+    opacity: 1;
+  }
+  
+  &.oval-lg {
+    height: $height;
+    width: 210px;
+    padding: 0 28px;
+    border-radius: 40px;
+  }
+  
+  &.oval-xlg {
+    height: $height;
+    width: 100%;
+    padding: 0 28px;
+    border-radius: 40px;
+  }
+}
