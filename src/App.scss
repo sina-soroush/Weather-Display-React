@@ -1,0 +1,78 @@
+// Neumorphic color palette
+$bgColor: #EBECF0;
+$textColor: #6C7587;
+$accentBlue: #1657F0;
+$brightBlue: #36D7E0;
+$darkShadow: #484f60;
+$lightShadow: #FFFFFF;
+
+$dropShadow: 8px 8px 12px -2px rgba($darkShadow, 0.4),
+             -6px -6px 12px -1px rgba($lightShadow, 1);
+
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $bgColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  
+  h1 {
+    font-size: 48px;
+    color: $textColor;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, $accentBlue, $brightBlue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  p {
+    font-size: 18px;
+    color: $textColor;
+    margin-bottom: 40px;
+  }
+}
+
+.info-card {
+  padding: 40px;
+  border-radius: 24px;
+  background-color: $bgColor;
+  box-shadow: $dropShadow;
+  
+  h2 {
+    font-size: 32px;
+    color: $accentBlue;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 20px 0;
+    
+    li {
+      font-size: 18px;
+      color: $textColor;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 12px;
+      background-color: $bgColor;
+      box-shadow: inset -2px -2px 6px -1px rgba($lightShadow, 0.8),
+                  inset 1px 1px 4px -1px rgba($darkShadow, 0.3);
+    }
+  }
+  
+  .next-step {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $accentBlue;
+  }
+}
