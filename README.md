@@ -1,16 +1,180 @@
-# React + Vite
+# 🌤️ Weather Display React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive weather application built with React and Vite. Features real-time weather data, 5-day forecasts, and an intuitive city search with autocomplete suggestions powered by OpenStreetMap.
 
-Currently, two official plugins are available:
+![Weather Display](https://img.shields.io/badge/React-18.3.1-blue)
+![Vite](https://img.shields.io/badge/Vite-6.0.3-purple)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🌍 **Automatic Location Detection** - Uses GPS or IP-based location fallback
+- 🔍 **Smart City Search** - Google Maps-style autocomplete with real-time suggestions
+- 🌡️ **Unit Toggle** - Switch between Celsius and Fahrenheit
+- 📊 **5-Day Forecast** - Visual graph showing temperature trends
+- 🎨 **Modern UI** - Neumorphic design with smooth animations
+- 📱 **Responsive** - Works perfectly on all device sizes
+- ⚡ **Fast & Lightweight** - Optimized performance with Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖼️ Weather Information
 
-## Expanding the ESLint configuration
+- Current temperature with "feels like"
+- Weather conditions with icons
+- Humidity and pressure
+- Wind speed and direction
+- Visibility
+- Sunrise and sunset times
+- Min/max temperatures
+- 5-day forecast with daily highs/lows
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- OpenWeatherMap API key (free tier available)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/sina-soroush/Weather-Display-React.git
+   cd Weather-Display-React
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_OPENWEATHER_API_KEY=your_api_key_here
+   ```
+
+   Get your free API key from [OpenWeatherMap](https://openweathermap.org/api)
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+   The app will open at `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The optimized build will be in the `dist/` folder, ready for deployment.
+
+## 📁 Project Structure
+
+```
+Weather-Display-React/
+├── public/              # Static assets
+├── src/
+│   ├── assets/         # Images and icons
+│   ├── components/     # React components
+│   │   ├── Button/
+│   │   ├── Graph/
+│   │   ├── Input/
+│   │   ├── ProgressBar/
+│   │   ├── Radio/
+│   │   ├── SearchBar/
+│   │   ├── Toggle/
+│   │   └── WeatherDisplay/
+│   ├── hooks/          # Custom React hooks
+│   │   ├── useGeolocation.js
+│   │   └── useWeather.js
+│   ├── services/       # API services
+│   │   ├── locationService.js
+│   │   └── weatherService.js
+│   ├── styles/         # Global styles
+│   │   ├── global.scss
+│   │   └── variables.scss
+│   └── icons/          # Weather icons
+├── .env                # Environment variables
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## 🔧 Technologies Used
+
+- **React 18** - UI framework
+- **Vite** - Build tool and dev server
+- **SCSS** - Styling with variables and mixins
+- **OpenWeatherMap API** - Weather data
+- **OpenStreetMap Nominatim** - Geocoding and city search
+- **Geolocation API** - Browser location detection
+
+## 🌐 APIs Used
+
+1. **OpenWeatherMap API**
+   - Current weather data
+   - 5-day forecast
+   - Weather icons
+
+2. **OpenStreetMap Nominatim**
+   - City autocomplete search
+   - Reverse geocoding
+   - Location coordinates
+
+3. **IP Geolocation (ipapi.co)**
+   - Fallback location detection
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🎨 Features in Detail
+
+### City Search Autocomplete
+Type at least 2 characters to see real-time suggestions. The autocomplete displays:
+- City name
+- State/Region
+- Country
+- Location icon
+
+### Unit Toggle
+Seamlessly switch between:
+- Celsius (°C) / Fahrenheit (°F)
+- Meters per second / Miles per hour (wind speed)
+
+### 5-Day Forecast Graph
+Visual representation of temperature trends with:
+- Daily high/low temperatures
+- Day names
+- Interactive bar chart
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👤 Author
+
+**Sina Soroush**
+- GitHub: [@sina-soroush](https://github.com/sina-soroush)
+
+## 🙏 Acknowledgments
+
+- Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
+- Geocoding by [OpenStreetMap](https://www.openstreetmap.org/)
+- Icons and design inspiration from modern weather apps
+
+---
+
+⭐ Star this repo if you find it helpful!
