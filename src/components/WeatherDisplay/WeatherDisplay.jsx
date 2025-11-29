@@ -185,40 +185,18 @@ const WeatherDisplay = () => {
                 <span className="label">Wind Speed</span>
                 <span className="value">{weather.windSpeed} {units === 'metric' ? 'm/s' : 'mph'}</span>
               </div>
-              {weather.windDeg !== undefined && (
-                <div className="detail-item">
-                  <span className="label">Wind Direction</span>
-                  <span className="value">{getWindDirection(weather.windDeg)} ({weather.windDeg}°)</span>
-                </div>
-              )}
+              <div className="detail-item">
+                <span className="label">Wind Direction</span>
+                <span className="value">{getWindDirection(weather.windDeg)} ({weather.windDeg}°)</span>
+              </div>
               <div className="detail-item">
                 <span className="label">Pressure</span>
                 <span className="value">{weather.pressure} hPa</span>
               </div>
-              {weather.clouds !== undefined && (
-                <div className="detail-item">
-                  <span className="label">Cloud Cover</span>
-                  <span className="value">{weather.clouds}%</span>
-                </div>
-              )}
-              {weather.visibility !== undefined && (
-                <div className="detail-item">
-                  <span className="label">Visibility</span>
-                  <span className="value">{(weather.visibility / 1000).toFixed(1)} km</span>
-                </div>
-              )}
-              {weather.tempMin !== undefined && weather.tempMax !== undefined && (
-                <>
-                  <div className="detail-item">
-                    <span className="label">Min Temp</span>
-                    <span className="value">{weather.tempMin}°</span>
-                  </div>
-                  <div className="detail-item">
-                    <span className="label">Max Temp</span>
-                    <span className="value">{weather.tempMax}°</span>
-                  </div>
-                </>
-              )}
+              <div className="detail-item">
+                <span className="label">Visibility</span>
+                <span className="value">{(weather.visibility / 1000).toFixed(1)} km</span>
+              </div>
             </div>
 
             {weather.sunrise && weather.sunset && (
