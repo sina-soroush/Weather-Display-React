@@ -210,15 +210,15 @@ export const formatTime = (timestamp, timezone = 0) => {
 
 export const getWeatherIconPath = (condition) => {
   const iconMap = {
-    Clear: '/src/icons/sunny.png',
-    Clouds: '/src/icons/cloudy.png',
-    Rain: '/src/icons/rainy.png',
-    Drizzle: '/src/icons/rainy.png',
-    Thunderstorm: '/src/icons/storm.png',
-    Snow: '/src/icons/snow.png',
-    Mist: '/src/icons/fog.png',
-    Fog: '/src/icons/fog.png',
-    Haze: '/src/icons/fog.png',
+    Clear: '/icons/sunny.png',
+    Clouds: '/icons/cloudy.png',
+    Rain: '/icons/rainy.png',
+    Drizzle: '/icons/rainy.png',
+    Thunderstorm: '/icons/storm.png',
+    Snow: '/icons/snow.png',
+    Mist: '/icons/fog.png',
+    Fog: '/icons/fog.png',
+    Haze: '/icons/fog.png',
   };
-  return iconMap[condition] || '/src/icons/sunny.png';
+  return iconMap[condition] || '/icons/sunny.png';
 };
