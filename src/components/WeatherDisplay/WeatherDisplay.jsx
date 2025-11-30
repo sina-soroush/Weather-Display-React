@@ -107,7 +107,7 @@ const WeatherDisplay = () => {
         <div className="header-controls-row">
           <h1>Weather Display</h1>
         <div className="header-icon-row">
-          <img src="/src/icons/thermometer.png" alt="Thermometer" className="header-icon" />
+          <img src="/icons/thermometer.png" alt="Thermometer" className="header-icon" />
         </div>
           <div className="units-toggle">
             <span className={!units || units === 'metric' ? 'active' : ''}>°C</span>
